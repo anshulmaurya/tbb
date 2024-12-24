@@ -147,6 +147,29 @@ footer.show-socials .footer-buttons {
     visibility: visible;
 }
 
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.floating-button span {
+    margin-right: 10px;
+}
+
+.floating-button:hover {
+    background-color: #2980b9;
+}
+
 @media (max-width: 768px) {
     .welcome-section {
         flex-direction: column;

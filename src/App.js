@@ -5,6 +5,7 @@ import backgroundImg from './components/assets/backgroundImg.png';
 import youtubeLogo from './components/assets/youtube.png';
 import spotifyLogo from './components/assets/spotify.png';
 import appleMusicLogo from './components/assets/apple-music.png';
+// import artistLogo from './components/assets/artist.png'; // Remove artist logo
 
 function App() {
     const [showFooterSocials, setShowFooterSocials] = useState(false);
@@ -92,6 +93,9 @@ function App() {
                     </a>
                 </div>
             </footer>
+            <div className="floating-button">
+                <span>Are you an artist?</span>
+            </div>
         </div>
     );
 }
