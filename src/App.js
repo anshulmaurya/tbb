@@ -8,19 +8,39 @@ import appleMusicLogo from './components/assets/apple-music.png';
 
 function App() {
     const [showFooterSocials, setShowFooterSocials] = useState(false);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             const header = document.querySelector('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
             if (header) {
                 const headerBottom = header.getBoundingClientRect().bottom;
                 setShowFooterSocials(headerBottom < 0);
+
+                if (scrollTop > lastScrollTop) {
+                    header.classList.remove('header-stretch');
+                    header.classList.add('header-shrink');
+                } else {
+                    header.classList.remove('header-shrink');
+                    header.classList.add('header-stretch');
+                }
+                setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
             }
+
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight * 0.75) {
+                    section.classList.add('scroll-fade-in');
+                }
+            });
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [lastScrollTop]);
 
     return (
         <div className="App">
@@ -29,7 +49,7 @@ function App() {
                 <img src={backgroundImg} alt="Background" className="background-img" />
                 <div className="welcome-text">
                     <h1>The Boy In Blue</h1>
-                    <p>The Composer You Might be Looking For</p>
+                    <p>"The Composer You Might be Looking For"</p>
                 </div>
             </div>
             <main>
@@ -59,7 +79,7 @@ function App() {
                 </section>
             </main>
             <footer className={showFooterSocials ? 'show-socials' : ''}>
-                <p>&copy; 2023 The Boy In Blue</p>
+                <p>&copy; 2025 The Boy In Blue</p>
                 <div className="footer-buttons">
                     <a href="https://www.youtube.com/@theboyinblue" target="_blank" rel="noopener noreferrer">
                         <img src={youtubeLogo} alt="YouTube" />

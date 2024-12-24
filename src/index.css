@@ -3,6 +3,8 @@
     --primary-color: #ffffff;
     --background-color: #000000;
     --accent-color: #3498db;
+    --animation-duration: 1.5s; /* animation duration */
+    --animation-ease: ease-in-out;
 }
 
 * {
@@ -31,4 +33,62 @@ html, body {
     .welcome-text h1 {
         font-size: 2.5em;
     }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn var(--animation-duration) var(--animation-ease) forwards;
+}
+
+/* Scroll animations */
+@keyframes scrollFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Increase translateY for more noticeable effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-fade-in {
+    opacity: 0;
+    animation: scrollFadeIn var(--animation-duration) var(--animation-ease) forwards;
+}
+
+/* Header stretch animation */
+@keyframes stretchHeader {
+    from {
+        height: 60px;
+    }
+    to {
+        height: 80px;
+    }
+}
+
+@keyframes shrinkHeader {
+    from {
+        height: 80px;
+    }
+    to {
+        height: 60px;
+    }
+}
+
+.header-stretch {
+    animation: stretchHeader 0.3s forwards;
+}
+
+.header-shrink {
+    animation: shrinkHeader 0.3s forwards;
 }

@@ -24,31 +24,53 @@ body::-webkit-scrollbar {
 .welcome-section {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align items to the start */
     height: 100vh;
     position: relative;
     background-color: rgba(0, 0, 0, 0.5); /* Add overlay */
+    animation: fadeIn var(--animation-duration) var(--animation-ease) forwards;
 }
 
 .background-img {
     position: absolute;
-    left: 0;
-    width: 100%; /* Make the image fit the width of the page */
-    height: 100%; /* Make the image fit the height of the page */
+    left: 10%;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for centering */
+    width: 50%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensure the image covers the entire area */
     z-index: -1; /* Place the image behind the text */
 }
 
 .welcome-text {
     position: relative;
-    text-align: center;
+    text-align: left; /* Align text to the left */
     z-index: 1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 50%; /* Move text to the right */
+    padding-top: 20%; /* Adjust padding to move text down */
+    animation: fadeInUp var(--animation-duration) var(--animation-ease) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .welcome-text h1 {
     font-size: 3.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em; /* Reduce margin to bring subtitle closer */
+}
+
+.welcome-text p {
+    font-style: italic; /* Make subtitle italic */
+    margin-top: 0; /* Remove top margin */
 }
 
 main {
@@ -67,14 +89,7 @@ section {
     padding: 4rem 2rem;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    animation: fadeInUp var(--animation-duration) var(--animation-ease) forwards;
 }
 
 section h2 {
@@ -104,7 +119,7 @@ footer {
 }
 
 footer p {
-    font-size: 0.8em; /* Smaller font size for footer text */
+    font-size: 0.6em; /* Smaller font size for footer text */
     margin: 0;
 }
 
