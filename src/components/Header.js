@@ -7,16 +7,16 @@ import appleMusicLogo from './assets/apple-music.png';
 const Header = () => {
     return (
         <header>
-            <div className="logo">My Logo</div>
+            <div className="logo">TBB-Music</div>
             <div className="middle-buttons">
                 <button>Join Community</button>
                 <button>Shop</button>
             </div>
             <div className="right-buttons">
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/@theboyinblue" target="_blank" rel="noopener noreferrer">
                     <img src={youtubeLogo} alt="YouTube" />
                 </a>
-                <a href="https://spotify.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://open.spotify.com/artist/1B5QDOBrfzE8MvTNEcor6s" target="_blank" rel="noopener noreferrer">
                     <img src={spotifyLogo} alt="Spotify" />
                 </a>
                 <a href="https://apple.com/music" target="_blank" rel="noopener noreferrer">
