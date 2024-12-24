@@ -73,6 +73,10 @@ body::-webkit-scrollbar {
     margin-top: 0; /* Remove top margin */
 }
 
+.blue-text {
+    color: var(--accent-color); /* Blue color for the word "Blue" */
+}
+
 main {
     padding: 20px;
     display: flex;

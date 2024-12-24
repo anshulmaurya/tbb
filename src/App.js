@@ -48,7 +48,7 @@ function App() {
             <div className="welcome-section">
                 <img src={backgroundImg} alt="Background" className="background-img" />
                 <div className="welcome-text">
-                    <h1>The Boy In Blue</h1>
+                    <h1>The Boy In <span className="blue-text">Blue</span></h1>
                     <p>"The Composer You Might be Looking For"</p>
                 </div>
             </div>
