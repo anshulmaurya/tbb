@@ -3,7 +3,7 @@
     --primary-color: #ffffff;
     --background-color: #000000;
     --accent-color: #3498db;
-    --animation-duration: 1.5s; /* animation duration */
+    --animation-duration: 2s; /* animation duration */
     --animation-ease: ease-in-out;
 }
 
@@ -47,23 +47,6 @@ html, body {
 
 .fade-in {
     animation: fadeIn var(--animation-duration) var(--animation-ease) forwards;
-}
-
-/* Scroll animations */
-@keyframes scrollFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(50px); /* Increase translateY for more noticeable effect */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.scroll-fade-in {
-    opacity: 0;
-    animation: scrollFadeIn var(--animation-duration) var(--animation-ease) forwards;
 }
 
 /* Header stretch animation */
