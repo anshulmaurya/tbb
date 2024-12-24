@@ -142,3 +142,45 @@ footer.show-socials .footer-buttons {
     opacity: 1;
     visibility: visible;
 }
+
+@media (max-width: 768px) {
+    .welcome-section {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .background-img {
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+        transform: none;
+    }
+
+    .welcome-text {
+        margin-left: 0;
+        padding-top: 10%;
+        text-align: center;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .footer-buttons {
+        margin-top: 10px;
+    }
+}
