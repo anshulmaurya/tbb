@@ -5,15 +5,16 @@ import backgroundImg from './components/assets/backgroundImg.png';
 import youtubeLogo from './components/assets/youtube.png';
 import spotifyLogo from './components/assets/spotify.png';
 import appleMusicLogo from './components/assets/apple-music.png';
-// import artistLogo from './components/assets/artist.png'; // Remove artist logo
 
 function App() {
     const [showFooterSocials, setShowFooterSocials] = useState(false);
     const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [headerHidden, setHeaderHidden] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const header = document.querySelector('header');
+            const floatingButton = document.querySelector('.floating-button');
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
             if (header) {
@@ -23,9 +24,17 @@ function App() {
                 if (scrollTop > lastScrollTop) {
                     header.classList.remove('header-stretch');
                     header.classList.add('header-shrink');
+                    if (scrollTop > 100) {
+                        header.classList.add('header-hide');
+                        setHeaderHidden(true);
+                        floatingButton.classList.add('up');
+                    }
                 } else {
+                    header.classList.remove('header-hide');
                     header.classList.remove('header-shrink');
                     header.classList.add('header-stretch');
+                    setHeaderHidden(false);
+                    floatingButton.classList.remove('up');
                 }
                 setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
             }
@@ -79,7 +88,7 @@ function App() {
                     </p>
                 </section>
             </main>
-            <footer className={showFooterSocials ? 'show-socials' : ''}>
+            <footer className={showFooterSocials || headerHidden ? 'show-socials' : ''}>
                 <p>&copy; 2025 The Boy In Blue</p>
                 <div className="footer-buttons">
                     <a href="https://www.youtube.com/@theboyinblue" target="_blank" rel="noopener noreferrer">

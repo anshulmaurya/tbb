@@ -149,7 +149,7 @@ footer.show-socials .footer-buttons {
 
 .floating-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 60px; /* Adjusted position to be higher */
     right: 20px;
     background-color: var(--accent-color);
     color: #fff;
@@ -159,7 +159,7 @@ footer.show-socials .footer-buttons {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 1s ease, bottom 0.3s ease;
 }
 
 .floating-button span {
@@ -168,6 +168,10 @@ footer.show-socials .footer-buttons {
 
 .floating-button:hover {
     background-color: #2980b9;
+}
+
+.floating-button.up {
+    bottom: 100px; /* Move up when scrolling down */
 }
 
 @media (max-width: 768px) {
